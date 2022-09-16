@@ -6,11 +6,6 @@ section {
   background-color: #eeeeee;
 }
 
-body {
-  font-style: normal;
-  line-height: 1.5;
-}
-
 .form-control:focus {
   box-shadow: none;
 }
@@ -24,7 +19,6 @@ section,
 .container-fluid {
   position: relative;
   word-wrap: break-word;
-  word-break: break-word;
 }
 
 a.mbr-iconfont:hover {
@@ -243,6 +237,11 @@ figure[mbr-media-size] {
 .card {
   background-color: transparent;
   border: none;
+  display: -webkit-flex;
+}
+
+.card-wrapper {
+  flex: 1;
 }
 
 .card-img {
@@ -530,7 +529,7 @@ nav .mbr-section-btn {
 
 @media (max-width: 991px) {
   .menu .navbar-collapse {
-    max-height: 93.5vh;
+    max-height: 100vh;
   }
   .menu .navbar-collapse.show {
     overflow: auto;
@@ -551,13 +550,13 @@ nav .mbr-section-btn {
 
 @media (min-width: 992px) {
   .menu .navbar-nav.nav-dropdown {
-    display: -webkit-flex;
+    display: flex;
   }
   .menu .navbar-toggleable-sm .navbar-collapse {
-    display: -webkit-flex !important;
+    display: flex !important;
   }
   .menu .collapsed .navbar-collapse {
-    max-height: 93.5vh;
+    max-height: 100vh;
   }
   .menu .collapsed .navbar-collapse.show {
     overflow: auto;
@@ -591,26 +590,10 @@ nav .mbr-section-btn {
   -webkit-justify-content: center;
 }
 
-.card {
-  display: -webkit-flex;
-}
-
-.card-wrapper {
-  flex: 1;
-}
-
-.carousel-control {
-  display: -webkit-flex;
-  -webkit-align-items: center;
-  -webkit-justify-content: center;
-}
-
 @media (max-width: 576px) {
   .col-xs-3 {
     flex: 0 0 25%;
     max-width: 25%;
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
@@ -619,14 +602,14 @@ nav .mbr-section-btn {
 }
 
 .jq-selectbox__select {
-  padding: .5rem 1rem;
+  padding: 1rem;
   position: absolute;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .jq-selectbox__dropdown {
@@ -642,7 +625,7 @@ nav .mbr-section-btn {
 }
 
 .jq-selectbox li {
-  padding: .5rem 1rem;
+  padding: 1rem;
 }
 
 input[type="range"] {
@@ -673,18 +656,27 @@ input[type="range"] {
   margin: auto;
 }
 
+body {
+  font-style: normal;
+  line-height: 1.3;
+}
+
 .mbr-section-title {
   font-style: normal;
   line-height: 1.2;
 }
 
 .mbr-section-subtitle {
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .mbr-text {
   font-style: normal;
-  line-height: 1.7;
+  line-height: 1.3;
+}
+
+.mbr-normal {
+  font-weight: 400;
 }
 
 .btn {
@@ -692,10 +684,10 @@ input[type="range"] {
   font-weight: 600;
   border-width: 2px;
   font-style: normal;
-  letter-spacing: 2px;
-  margin: .4rem .8rem;
+  letter-spacing: 0px;
+  margin: 0.4rem 0.8rem;
   white-space: normal;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -704,22 +696,26 @@ input[type="range"] {
 
 .btn-sm {
   font-weight: 600;
-  transition: all .3s ease-in-out;
+  letter-spacing: 0px;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-md {
   font-weight: 600;
-  margin: .4rem .8rem !important;
-  transition: all .3s ease-in-out;
+  letter-spacing: 0px;
+  margin: 0.4rem 0.8rem !important;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-lg {
   font-weight: 600;
-  margin: .4rem .8rem !important;
-  transition: all .3s ease-in-out;
+  letter-spacing: 0px;
+  margin: 0.4rem 0.8rem !important;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-form {
+  margin: 0;
   border-radius: 0;
 }
 
@@ -728,7 +724,7 @@ input[type="range"] {
 }
 
 #scrollToTop a i:before {
-  content: '';
+  content: "";
   position: absolute;
   height: 40%;
   top: 25%;
@@ -738,7 +734,7 @@ input[type="range"] {
 }
 
 #scrollToTop a i:after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   border-top: 2px solid #fff;
@@ -749,11 +745,6 @@ input[type="range"] {
   bottom: 30%;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
-}
-
-/* Others*/
-.note-check a[data-value=Rubik] {
-  font-style: normal;
 }
 
 .mbr-arrow a {
@@ -769,7 +760,7 @@ input[type="range"] {
 .form-control-label {
   position: relative;
   cursor: pointer;
-  margin-bottom: .357em;
+  margin-bottom: 0.357em;
   padding: 0;
 }
 
@@ -777,7 +768,7 @@ input[type="range"] {
   color: #ffffff;
   border-radius: 0;
   border: 0;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1.875rem;
   padding: 1.25rem;
@@ -804,7 +795,7 @@ input[type="range"] {
   color: #565656;
   line-height: 1.43;
   min-height: 3.5em;
-  padding: .5rem 1rem;
+  padding: 1rem;
 }
 
 .form-control, .form-control:focus {
@@ -819,7 +810,7 @@ input[type="range"] {
   background-color: #000;
   bottom: 0;
   left: 0;
-  opacity: .5;
+  opacity: 0.5;
   position: absolute;
   right: 0;
   top: 0;
@@ -861,6 +852,21 @@ pre {
   justify-content: center;
 }
 
+.btn {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18);
+  font-weight: 600;
+}
+
+.btn .mbr-iconfont-btn {
+  order: 1;
+  margin: 0 !important;
+  padding-left: 0.8rem !important;
+}
+
+.popover-content .btn {
+  box-shadow: none !important;
+}
+
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
@@ -880,42 +886,4 @@ body {
 
 .dropup .dropdown-toggle::after {
   display: none;
-}
-
-.mbr-section-title {
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-.mbr-section-subtitle {
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.mbr-section-btn .btn {
-  font-weight: 700;
-}
-
-.mbr-section-btn .btn-sm {
-  padding: .3rem 1rem !important;
-}
-
-.mbr-section-btn .btn-md {
-  padding: .5rem 2rem !important;
-}
-
-.mbr-section-btn .btn-lg {
-  padding: 1rem 2.2rem !important;
-}
-
-.mbr-text {
-  letter-spacing: 1px;
-}
-
-.mbr-lighter {
-  font-weight: 100 !important;
-}
-
-body {
-  color: #333333;
 }
